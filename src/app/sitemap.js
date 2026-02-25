@@ -18,6 +18,14 @@ export default function sitemap() {
     'color-converter',
     'markdown-preview',
     'text-diff',
+    'qr-generator',
+    'uuid-generator',
+    'timestamp-converter',
+    'word-frequency',
+    'jwt-decoder',
+    'cron-generator',
+    'json-yaml',
+    'code-minifier',
   ];
 
   const toolPages = tools.map((tool) => ({

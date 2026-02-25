@@ -957,4 +957,91 @@ textarea {
     flex-direction: column;
     align-items: center;
   }
+  .email-capture-inner {
+    flex-direction: column !important;
+    text-align: center;
+  }
+  .email-capture-form {
+    flex-direction: column !important;
+  }
+}
+
+/* ==================== EMAIL CAPTURE ==================== */
+.email-capture {
+  margin: 3rem 0;
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1d4ed8 100%);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.email-capture::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.3), transparent 70%);
+  pointer-events: none;
+}
+
+.email-capture-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  position: relative;
+}
+
+.email-capture-text h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.25rem;
+}
+
+.email-capture-text p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.email-capture-form {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.email-capture-input {
+  padding: 0.75rem 1rem !important;
+  border-radius: var(--radius) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: var(--white) !important;
+  font-size: 0.9rem !important;
+  width: 250px !important;
+  backdrop-filter: blur(8px);
+}
+
+.email-capture-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.email-capture-input:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3) !important;
+}
+
+.email-capture-btn {
+  white-space: nowrap;
+  padding: 0.75rem 1.5rem !important;
+  font-weight: 600 !important;
+}
+
+/* ==================== AD SLOT ==================== */
+.ad-slot {
+  margin: 1.5rem 0;
+  text-align: center;
 }

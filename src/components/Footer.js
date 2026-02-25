@@ -16,7 +16,9 @@ export default function Footer() {
           <ul>
             <li><Link href="/tools/word-counter">Word Counter</Link></li>
             <li><Link href="/tools/password-generator">Password Generator</Link></li>
-            <li><Link href="/tools/case-converter">Case Converter</Link></li>
+            <li><Link href="/tools/qr-generator">QR Code Generator</Link></li>
+            <li><Link href="/tools/uuid-generator">UUID Generator</Link></li>
+            <li><Link href="/tools/timestamp-converter">Timestamp Converter</Link></li>
             <li><Link href="/tools/base64-tool">Base64 Tool</Link></li>
           </ul>
         </div>
@@ -25,8 +27,10 @@ export default function Footer() {
           <h4>Pro Tools</h4>
           <ul>
             <li><Link href="/tools/json-formatter">JSON Formatter</Link></li>
-            <li><Link href="/tools/regex-tester">Regex Tester</Link></li>
-            <li><Link href="/tools/sql-formatter">SQL Formatter</Link></li>
+            <li><Link href="/tools/jwt-decoder">JWT Decoder</Link></li>
+            <li><Link href="/tools/cron-generator">Cron Generator</Link></li>
+            <li><Link href="/tools/json-yaml">JSON ↔ YAML</Link></li>
+            <li><Link href="/tools/code-minifier">Code Minifier</Link></li>
             <li><Link href="/tools/color-converter">Color Converter</Link></li>
           </ul>
         </div>

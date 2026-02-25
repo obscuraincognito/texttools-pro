@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import Script from 'next/script';
+import EmailCapture from '../components/EmailCapture';
+import AdSlot from '../components/AdSlot';
 
 /* ==================== STRUCTURED DATA FOR GOOGLE ==================== */
 const jsonLd = {
@@ -7,14 +9,14 @@ const jsonLd = {
   '@type': 'WebApplication',
   name: 'TextTools Pro',
   url: 'https://texttools-pro.vercel.app',
-  description: 'A collection of 16 fast, privacy-friendly text utilities that run entirely in your browser.',
+  description: 'A collection of 24 fast, privacy-friendly text utilities that run entirely in your browser.',
   applicationCategory: 'UtilitiesApplication',
   operatingSystem: 'Any',
   offers: {
     '@type': 'Offer',
     price: '0',
     priceCurrency: 'USD',
-    description: '9 free tools available with no sign-up',
+    description: '13 free tools available with no sign-up',
   },
   aggregateRating: undefined,
 };
@@ -78,6 +80,41 @@ const DropletIcon = () => (
 const MaximizeIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M15 3h6v6"/><path d="M9 21H3v-6"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/>
+  </svg>
+);
+const QrCodeIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="8" height="8" rx="1"/><rect x="14" y="2" width="8" height="8" rx="1"/><rect x="2" y="14" width="8" height="8" rx="1"/><rect x="14" y="14" width="4" height="4"/><line x1="22" y1="14" x2="22" y2="22"/><line x1="14" y1="22" x2="22" y2="22"/>
+  </svg>
+);
+const KeyIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/>
+  </svg>
+);
+const ClockIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+  </svg>
+);
+const BarChartIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/>
+  </svg>
+);
+const ShieldIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+  </svg>
+);
+const RepeatIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+  </svg>
+);
+const MinimizeIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="14" y1="10" x2="21" y2="3"/><line x1="3" y1="21" x2="10" y2="14"/>
   </svg>
 );
 const ArrowIcon = () => (
@@ -151,6 +188,34 @@ const freeTools = [
     icon: <FileTextIcon />,
     iconBg: '#3b82f6',
   },
+  {
+    name: 'QR Code Generator',
+    description: 'Generate QR codes for URLs, text, emails, or any data. Download as PNG or JPG.',
+    href: '/tools/qr-generator',
+    icon: <QrCodeIcon />,
+    iconBg: '#10b981',
+  },
+  {
+    name: 'UUID Generator',
+    description: 'Generate random UUID v4 identifiers. Create single or bulk UUIDs instantly.',
+    href: '/tools/uuid-generator',
+    icon: <KeyIcon />,
+    iconBg: '#8b5cf6',
+  },
+  {
+    name: 'Unix Timestamp Converter',
+    description: 'Convert between Unix timestamps and human-readable dates with live clock.',
+    href: '/tools/timestamp-converter',
+    icon: <ClockIcon />,
+    iconBg: '#f59e0b',
+  },
+  {
+    name: 'Word Frequency Counter',
+    description: 'Analyze text to find the most common words. Sort by frequency and export CSV.',
+    href: '/tools/word-frequency',
+    icon: <BarChartIcon />,
+    iconBg: '#3b82f6',
+  },
 ];
 
 const premiumTools = [
@@ -201,6 +266,34 @@ const premiumTools = [
     description: 'Compare two texts side-by-side and highlight differences line by line.',
     href: '/tools/text-diff',
     icon: <MaximizeIcon />,
+    iconBg: '#ec4899',
+  },
+  {
+    name: 'JWT Decoder',
+    description: 'Decode and inspect JSON Web Tokens. View header, payload, and expiration status.',
+    href: '/tools/jwt-decoder',
+    icon: <ShieldIcon />,
+    iconBg: '#6366f1',
+  },
+  {
+    name: 'Cron Expression Generator',
+    description: 'Build cron expressions visually. See human-readable descriptions and next run times.',
+    href: '/tools/cron-generator',
+    icon: <RepeatIcon />,
+    iconBg: '#6366f1',
+  },
+  {
+    name: 'JSON ↔ YAML Converter',
+    description: 'Convert between JSON and YAML formats. Handles nested objects and arrays.',
+    href: '/tools/json-yaml',
+    icon: <CodeIcon />,
+    iconBg: '#6366f1',
+  },
+  {
+    name: 'Code Minifier',
+    description: 'Minify or beautify JavaScript, CSS, and HTML. See file size savings instantly.',
+    href: '/tools/code-minifier',
+    icon: <MinimizeIcon />,
     iconBg: '#ec4899',
   },
 ];
@@ -254,7 +347,7 @@ export default function Home() {
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
               </svg>
-              16 Free & Pro Tools
+              24 Free & Pro Tools
             </span>
             <span className="hero-badge">
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -272,6 +365,9 @@ export default function Home() {
         </section>
       </div>
 
+      {/* ===== AD SLOT ===== */}
+      <AdSlot format="horizontal" />
+
       {/* ===== FREE TOOLS ===== */}
       <h2 className="section-title">Free Tools</h2>
       <div className="tools-grid">
@@ -280,6 +376,9 @@ export default function Home() {
         ))}
       </div>
 
+      {/* ===== EMAIL CAPTURE ===== */}
+      <EmailCapture />
+
       {/* ===== PREMIUM TOOLS ===== */}
       <h2 className="section-title">Premium Tools</h2>
       <div className="tools-grid">
@@ -287,6 +386,9 @@ export default function Home() {
           <ToolCard key={tool.href} tool={tool} badge="premium" />
         ))}
       </div>
+
+      {/* ===== AD SLOT ===== */}
+      <AdSlot format="horizontal" />
 
       {/* ===== TRUST SECTION ===== */}
       <section className="trust-section">
