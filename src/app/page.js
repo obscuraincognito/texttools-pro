@@ -8,16 +8,28 @@ const freeTools = [
     icon: '#',
   },
   {
+    name: 'Password Generator',
+    description: 'Generate strong, secure random passwords with customizable length and options.',
+    href: '/tools/password-generator',
+    icon: '***',
+  },
+  {
     name: 'Case Converter',
     description: 'Convert text between uppercase, lowercase, title case, sentence case, and more.',
     href: '/tools/case-converter',
     icon: 'Aa',
   },
   {
-    name: 'Lorem Ipsum Generator',
-    description: 'Generate placeholder text by paragraphs, sentences, or words.',
-    href: '/tools/lorem-generator',
-    icon: 'T',
+    name: 'Find & Replace',
+    description: 'Find and replace text with regex support. Remove blank lines and duplicates.',
+    href: '/tools/find-replace',
+    icon: '?=',
+  },
+  {
+    name: 'URL Encoder/Decoder',
+    description: 'Encode special characters for URLs or decode URL-encoded strings.',
+    href: '/tools/url-encoder',
+    icon: '%',
   },
   {
     name: 'Base64 Encoder/Decoder',
@@ -26,19 +38,55 @@ const freeTools = [
     icon: '{}',
   },
   {
+    name: 'HTML Entity Encoder',
+    description: 'Convert special characters to HTML entities or decode entities back.',
+    href: '/tools/html-entities',
+    icon: '&;',
+  },
+  {
     name: 'Hash Generator',
-    description: 'Generate MD5, SHA-1, SHA-256, and SHA-512 hashes from text input.',
+    description: 'Generate SHA-1, SHA-256, and SHA-512 hashes from text input.',
     href: '/tools/hash-generator',
     icon: '#!',
+  },
+  {
+    name: 'Lorem Ipsum Generator',
+    description: 'Generate placeholder text by paragraphs, sentences, or words.',
+    href: '/tools/lorem-generator',
+    icon: 'T',
   },
 ];
 
 const premiumTools = [
   {
     name: 'JSON Formatter',
-    description: 'Format, validate, and minify JSON. Tree view with syntax highlighting.',
+    description: 'Format, validate, and minify JSON with syntax checking.',
     href: '/tools/json-formatter',
     icon: '{ }',
+  },
+  {
+    name: 'Regex Tester',
+    description: 'Test regex patterns with real-time matching, highlighting, groups, and replace.',
+    href: '/tools/regex-tester',
+    icon: '.*',
+  },
+  {
+    name: 'CSV to JSON Converter',
+    description: 'Convert between CSV and JSON formats. Supports custom delimiters.',
+    href: '/tools/csv-to-json',
+    icon: ',J',
+  },
+  {
+    name: 'SQL Formatter',
+    description: 'Format, minify, and beautify SQL queries with customizable indentation.',
+    href: '/tools/sql-formatter',
+    icon: 'SQ',
+  },
+  {
+    name: 'Color Converter',
+    description: 'Convert colors between HEX, RGB, and HSL. Generate shades and tints.',
+    href: '/tools/color-converter',
+    icon: 'C',
   },
   {
     name: 'Markdown Preview',
