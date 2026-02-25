@@ -10,9 +10,43 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: 'TextTools Pro - Free Online Text Utilities',
-  description: 'Free online text tools: word counter, case converter, JSON formatter, markdown preview, and more. Premium tools available for power users.',
-  keywords: 'text tools, word counter, case converter, JSON formatter, markdown preview, online tools',
+  title: {
+    default: 'TextTools Pro - Free Online Text Utilities & Developer Tools',
+    template: '%s | TextTools Pro',
+  },
+  description: 'Free online text tools: word counter, password generator, case converter, JSON formatter, regex tester, and more. 16 tools that run 100% in your browser. No data collection, no sign-up required.',
+  keywords: 'text tools, word counter, password generator, case converter, JSON formatter, regex tester, online tools, developer tools, free tools',
+  authors: [{ name: 'TextTools Pro' }],
+  creator: 'TextTools Pro',
+  metadataBase: new URL('https://texttools-pro.vercel.app'),
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://texttools-pro.vercel.app',
+    siteName: 'TextTools Pro',
+    title: 'TextTools Pro - Free Online Text Utilities & Developer Tools',
+    description: 'A collection of 16 fast, privacy-friendly text utilities. Word counter, password generator, JSON formatter, regex tester, and more. 100% browser-based.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'TextTools Pro - Free Online Text Utilities',
+    description: 'A collection of 16 fast, privacy-friendly text utilities. 100% browser-based, no data collection.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    // Add your Google Search Console verification code here after setting it up
+    // google: 'your-verification-code',
+  },
 };
 
 export default function RootLayout({ children }) {

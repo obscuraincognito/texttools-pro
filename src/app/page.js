@@ -1,4 +1,23 @@
 import Link from 'next/link';
+import Script from 'next/script';
+
+/* ==================== STRUCTURED DATA FOR GOOGLE ==================== */
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'TextTools Pro',
+  url: 'https://texttools-pro.vercel.app',
+  description: 'A collection of 16 fast, privacy-friendly text utilities that run entirely in your browser.',
+  applicationCategory: 'UtilitiesApplication',
+  operatingSystem: 'Any',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'USD',
+    description: '9 free tools available with no sign-up',
+  },
+  aggregateRating: undefined,
+};
 
 /* ==================== SVG ICON COMPONENTS ==================== */
 const TypeIcon = () => (
@@ -211,6 +230,13 @@ function ToolCard({ tool, badge }) {
 export default function Home() {
   return (
     <div>
+      {/* ===== STRUCTURED DATA FOR GOOGLE ===== */}
+      <Script
+        id="json-ld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* ===== HERO SECTION ===== */}
       <div className="hero-wrapper">
         <div className="hero-orb hero-orb-1" />
