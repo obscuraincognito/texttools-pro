@@ -13,17 +13,17 @@ export default function EmailCapture() {
     setStatus('loading');
 
     try {
-      // Store email in localStorage as a backup / demo
-      // In production, replace this with your email service API call
-      // (e.g., Mailchimp, ConvertKit, Buttondown, or your own API endpoint)
-      const stored = JSON.parse(localStorage.getItem('tt_subscribers') || '[]');
-      if (!stored.includes(email.trim().toLowerCase())) {
-        stored.push(email.trim().toLowerCase());
-        localStorage.setItem('tt_subscribers', JSON.stringify(stored));
-      }
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email.trim() }),
+      });
 
-      // TODO: Replace with real API call, e.g.:
-      // await fetch('/api/subscribe', { method: 'POST', body: JSON.stringify({ email }) });
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || 'Failed to subscribe');
+      }
 
       setStatus('success');
       setEmail('');

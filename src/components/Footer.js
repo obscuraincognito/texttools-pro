@@ -15,11 +15,11 @@ export default function Footer() {
           <h4>Free Tools</h4>
           <ul>
             <li><Link href="/tools/word-counter">Word Counter</Link></li>
+            <li><Link href="/tools/pdf-merge">PDF Merge</Link></li>
+            <li><Link href="/tools/image-compress">Image Compress</Link></li>
             <li><Link href="/tools/password-generator">Password Generator</Link></li>
             <li><Link href="/tools/qr-generator">QR Code Generator</Link></li>
-            <li><Link href="/tools/uuid-generator">UUID Generator</Link></li>
-            <li><Link href="/tools/timestamp-converter">Timestamp Converter</Link></li>
-            <li><Link href="/tools/base64-tool">Base64 Tool</Link></li>
+            <li><Link href="/tools/image-resize">Image Resize</Link></li>
           </ul>
         </div>
 
@@ -27,10 +27,10 @@ export default function Footer() {
           <h4>Pro Tools</h4>
           <ul>
             <li><Link href="/tools/json-formatter">JSON Formatter</Link></li>
+            <li><Link href="/tools/api-tester">API Tester</Link></li>
             <li><Link href="/tools/jwt-decoder">JWT Decoder</Link></li>
-            <li><Link href="/tools/cron-generator">Cron Generator</Link></li>
-            <li><Link href="/tools/json-yaml">JSON ↔ YAML</Link></li>
-            <li><Link href="/tools/code-minifier">Code Minifier</Link></li>
+            <li><Link href="/tools/json-path">JSON Path</Link></li>
+            <li><Link href="/tools/date-converter">Date Converter</Link></li>
             <li><Link href="/tools/color-converter">Color Converter</Link></li>
           </ul>
         </div>
@@ -39,7 +39,8 @@ export default function Footer() {
           <h4>Resources</h4>
           <ul>
             <li><Link href="/">All Tools</Link></li>
-            <li><Link href="/tools/json-formatter">Get Pro</Link></li>
+            <li><Link href="/pricing">Pricing</Link></li>
+            <li><Link href="/pricing">Get Pro</Link></li>
           </ul>
         </div>
       </div>

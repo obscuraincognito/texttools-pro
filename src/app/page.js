@@ -9,14 +9,14 @@ const jsonLd = {
   '@type': 'WebApplication',
   name: 'TextTools Pro',
   url: 'https://texttools-pro.vercel.app',
-  description: 'A collection of 24 fast, privacy-friendly text utilities that run entirely in your browser.',
+  description: 'A collection of 34 fast, privacy-friendly text, PDF, and image utilities that run entirely in your browser.',
   applicationCategory: 'UtilitiesApplication',
   operatingSystem: 'Any',
   offers: {
     '@type': 'Offer',
     price: '0',
     priceCurrency: 'USD',
-    description: '13 free tools available with no sign-up',
+    description: '19 free tools available with no sign-up, 15 premium tools',
   },
   aggregateRating: undefined,
 };
@@ -113,6 +113,21 @@ const RepeatIcon = () => (
   </svg>
 );
 const MinimizeIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="14" y1="10" x2="21" y2="3"/><line x1="3" y1="21" x2="10" y2="14"/>
+  </svg>
+);
+const PdfIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M10 12h4"/><path d="M10 16h4"/>
+  </svg>
+);
+const ImageIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+  </svg>
+);
+const CompressIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="14" y1="10" x2="21" y2="3"/><line x1="3" y1="21" x2="10" y2="14"/>
   </svg>
@@ -216,6 +231,48 @@ const freeTools = [
     icon: <BarChartIcon />,
     iconBg: '#3b82f6',
   },
+  {
+    name: 'PDF Merge',
+    description: 'Combine multiple PDF files into a single document. Drag to reorder pages.',
+    href: '/tools/pdf-merge',
+    icon: <PdfIcon />,
+    iconBg: '#ef4444',
+  },
+  {
+    name: 'PDF Split',
+    description: 'Extract specific pages or split a PDF into smaller files by page range.',
+    href: '/tools/pdf-split',
+    icon: <PdfIcon />,
+    iconBg: '#ef4444',
+  },
+  {
+    name: 'PDF to Text',
+    description: 'Extract text content from PDF files. Copy or download as plain text.',
+    href: '/tools/pdf-to-text',
+    icon: <PdfIcon />,
+    iconBg: '#ef4444',
+  },
+  {
+    name: 'Image Compress',
+    description: 'Reduce image file size with adjustable quality slider. Supports JPEG, PNG, WebP.',
+    href: '/tools/image-compress',
+    icon: <CompressIcon />,
+    iconBg: '#10b981',
+  },
+  {
+    name: 'Image Resize',
+    description: 'Resize images to exact dimensions with aspect ratio lock and quick presets.',
+    href: '/tools/image-resize',
+    icon: <ImageIcon />,
+    iconBg: '#10b981',
+  },
+  {
+    name: 'Image to Base64',
+    description: 'Convert images to Base64 strings for embedding in HTML, CSS, or JSON.',
+    href: '/tools/image-to-base64',
+    icon: <ImageIcon />,
+    iconBg: '#10b981',
+  },
 ];
 
 const premiumTools = [
@@ -296,6 +353,34 @@ const premiumTools = [
     icon: <MinimizeIcon />,
     iconBg: '#ec4899',
   },
+  {
+    name: 'API Tester',
+    description: 'Build and send HTTP requests. View response status, headers, body, and timing.',
+    href: '/tools/api-tester',
+    icon: <CodeIcon />,
+    iconBg: '#6366f1',
+  },
+  {
+    name: 'JSON Path Explorer',
+    description: 'Browse JSON structure visually. Click any value to get its JSONPath expression.',
+    href: '/tools/json-path',
+    icon: <SearchIcon />,
+    iconBg: '#6366f1',
+  },
+  {
+    name: 'Placeholder Image',
+    description: 'Generate custom placeholder images with dimensions, colors, and text for mockups.',
+    href: '/tools/placeholder-image',
+    icon: <ImageIcon />,
+    iconBg: '#ec4899',
+  },
+  {
+    name: 'Date Converter',
+    description: 'Convert dates between formats: ISO 8601, Unix timestamp, RFC 2822, with timezone support.',
+    href: '/tools/date-converter',
+    icon: <ClockIcon />,
+    iconBg: '#ec4899',
+  },
 ];
 
 /* ==================== TOOL CARD COMPONENT ==================== */
@@ -339,7 +424,7 @@ export default function Home() {
             Free Online <span>Text Tools</span>
           </h1>
           <p className="hero-tagline">
-            A collection of fast, privacy-friendly text utilities that run entirely
+            A collection of fast, privacy-friendly text, PDF, and image utilities that run entirely
             in your browser. No data is sent to any server.
           </p>
           <div className="hero-badges">
@@ -347,7 +432,7 @@ export default function Home() {
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
               </svg>
-              24 Free & Pro Tools
+              34 Free & Pro Tools
             </span>
             <span className="hero-badge">
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

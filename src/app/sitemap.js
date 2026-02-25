@@ -26,6 +26,16 @@ export default function sitemap() {
     'cron-generator',
     'json-yaml',
     'code-minifier',
+    'pdf-merge',
+    'pdf-split',
+    'pdf-to-text',
+    'image-compress',
+    'image-resize',
+    'image-to-base64',
+    'api-tester',
+    'json-path',
+    'placeholder-image',
+    'date-converter',
   ];
 
   const toolPages = tools.map((tool) => ({
@@ -41,6 +51,12 @@ export default function sitemap() {
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1,
+    },
+    {
+      url: `${baseUrl}/pricing`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
     },
     ...toolPages,
   ];
