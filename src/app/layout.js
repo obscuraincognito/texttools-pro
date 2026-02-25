@@ -1,6 +1,13 @@
 import './globals.css';
+import { Inter } from 'next/font/google';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+});
 
 export const metadata = {
   title: 'TextTools Pro - Free Online Text Utilities',
@@ -10,7 +17,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.variable}>
       <body>
         <Header />
         <main className="main-content">{children}</main>
